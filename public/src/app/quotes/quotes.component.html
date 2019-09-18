@@ -1,0 +1,12 @@
+<div class="col-6">
+        <button [routerLink]="['/authors']" class="btn btn-link">Home</button>
+        <p>Provide a quote by {{author.name}}</p>
+        <form (submit)="new_quote()">
+            <p>Quote:
+                <input type="text" name="name"  class="form-control " [(ngModel)]="new_data.quote">
+            </p>
+            <a [routerLink]="['/votes', author._id]" class="btn btn-primary">Cancel</a>
+            <input type="submit" value="Submit"  class= "btn btn-primary ml-5">
+        </form>
+        <p *ngIf="error" class="mt-5 text-danger">{{error}}</p>
+    </div>

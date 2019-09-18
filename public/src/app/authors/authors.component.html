@@ -1,0 +1,22 @@
+<div class="col-6">
+    <a [routerLink]="['/add']" calss="btn btn-link"> Add a quotable author</a>
+    <p>We have quotes by:</p>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+            <th scope="col">Author</th>
+            <th scope="col">Avtions available</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor ="let author of authors">
+            <td >{{author.name}}</td>
+            <td>
+                <button class="btn btn-secondary" [routerLink]="['/votes',author._id]">View quotes </button>
+                <button class="btn btn-info ml-5" [routerLink]="['/edit',author._id]">Edit </button>               
+            </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
